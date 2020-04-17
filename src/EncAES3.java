@@ -78,6 +78,8 @@ public class EncAES3 implements EncryptionOrDecryption {
 
     @Override
     public void roundKey(byte[] array, byte[] key) {
-
+        for(int i=0; i<array.length; i++){
+            array[i]=((byte)(0xff &((int)array[i])^((int)key[i])));
+        }
     }
 }
