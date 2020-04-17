@@ -56,6 +56,7 @@ public class EncAES3 implements EncryptionOrDecryption {
     public void shiftColumns(byte[] input) {
         shiftColumnsStatic(input);
     }
+
     public static void shiftColumnsStatic(byte[] input) {
         byte temp1=input[4];
         input[4]=input[5];
