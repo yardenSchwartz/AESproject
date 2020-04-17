@@ -77,7 +77,7 @@ public class Main {
             }
         }
 
-        String path1="C:\\Users\\eden0\\Desktop\\עדן\\שנה ג\\סמסטר ב\\אבטחת מחשבים\\עבודות\\test files\\message_long";
+        String path1="C:\\Users\\eden0\\Desktop\\עדן\\שנה ג\\סמסטר ב\\אבטחת מחשבים\\עבודות\\test files\\cipher_long";
         String path2="C:\\Users\\eden0\\Desktop\\עדן\\שנה ג\\סמסטר ב\\אבטחת מחשבים\\עבודות\\test files\\output";
         Main.checkEquals(path1,path2);
     }
