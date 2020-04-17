@@ -85,7 +85,7 @@ public class Main {
     public  static void  checkEquals(String path1,String path2) throws IOException {
         File file1 = new File(path1);
         byte[] first = Files.readAllBytes(file1.toPath());
-        File file2 = new File(path1);
+        File file2 = new File(path2);
         byte[] second = Files.readAllBytes(file2.toPath());
         if(Arrays.equals(first,second))
             System.out.println("kololo");

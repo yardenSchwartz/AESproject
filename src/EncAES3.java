@@ -33,16 +33,7 @@ public class EncAES3 implements EncryptionOrDecryption {
     }
 
     private byte[][] getKeys(byte[] keys) {
-        int numPfKeys=3;
-        int numOfBytesEachKey=16;
-        int index=0;
-        byte[][]res=new byte[numPfKeys][16];
-        for(int i=0; i<numPfKeys;i++){
-            for(int j=0; j<numOfBytesEachKey; j++){
-                res[i][j]=keys[index++];
-            }
-        }
-        return res;
+       return GlobalFunction.getKeys(keys);
     }
 
     private void encRound(byte[] input, byte[] key1) {
