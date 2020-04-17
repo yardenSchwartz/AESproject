@@ -1,4 +1,8 @@
 public class GlobalFunction {
+    /***
+     * get an array in size 16 and make shift columns
+     * @param input
+     */
     public static void shiftColumns(byte[] input) {
         byte temp1=input[4];
         input[4]=input[5];
@@ -21,6 +25,12 @@ public class GlobalFunction {
         input[14]=temp2;
         input[15]=temp3;
     }
+
+    /**
+     * get an array in size 16 and make round key
+     * @param array
+     * @param key
+     */
     public static void roundKey(byte[] array, byte[] key) {
         for(int i=0; i<array.length; i++){
             array[i]=((byte)(0xff &((int)array[i])^((int)key[i])));
