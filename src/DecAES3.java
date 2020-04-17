@@ -18,7 +18,7 @@ public class DecAES3  implements EncryptionOrDecryption{
                 tmpRes[i]=input[i+numOfCellsInBlock*currentMassage];
             }
             /**Three rounds for each massage (16 bytes)**/
-            for(int  i=rounds-1; i>=0;i++){
+            for(int  i=rounds-1; i>=0;i--){
                 decRound(tmpRes,keysArray[i]);
             }
             /**Insert the encrypt massage to res**/
@@ -55,8 +55,8 @@ public class DecAES3  implements EncryptionOrDecryption{
         byte temp2=input[10];
         input[11]=input[9];
         input[10]=input[8];
-        input[9]=temp2;
-        input[8]=temp1;
+        input[9]=temp1;
+        input[8]=temp2;
 
         temp1=input[15];
         temp2=input[14];
@@ -69,6 +69,6 @@ public class DecAES3  implements EncryptionOrDecryption{
 
     @Override
     public void roundKey(byte[] array, byte[] key) {
-
+        GlobalFunction.roundKey(array,key);
     }
 }

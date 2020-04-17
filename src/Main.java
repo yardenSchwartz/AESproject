@@ -8,11 +8,11 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
         args=new String[7];
-        args[0]="-e";
+        args[0]="-d";
         args[1]="-k";
-        args[2]="C:\\Users\\eden0\\Desktop\\עדן\\שנה ג\\סמסטר ב\\אבטחת מחשבים\\עבודות\\test files\\key_long";
+        args[2]="C:\\Users\\eden0\\Desktop\\עדן\\שנה ג\\סמסטר ב\\אבטחת מחשבים\\עבודות\\test files\\key_short";
         args[3]="-i";
-        args[4]="C:\\Users\\eden0\\Desktop\\עדן\\שנה ג\\סמסטר ב\\אבטחת מחשבים\\עבודות\\test files\\message_long";
+        args[4]="C:\\Users\\eden0\\Desktop\\עדן\\שנה ג\\סמסטר ב\\אבטחת מחשבים\\עבודות\\test files\\cipher_short";
         args[5]="-o";
         args[6]="C:\\Users\\eden0\\Desktop\\עדן\\שנה ג\\סמסטר ב\\אבטחת מחשבים\\עבודות\\test files\\output";
 
@@ -77,7 +77,7 @@ public class Main {
             }
         }
 
-        String path1="C:\\Users\\eden0\\Desktop\\עדן\\שנה ג\\סמסטר ב\\אבטחת מחשבים\\עבודות\\test files\\cipher_long";
+        String path1="C:\\Users\\eden0\\Desktop\\עדן\\שנה ג\\סמסטר ב\\אבטחת מחשבים\\עבודות\\test files\\message_short";
         String path2="C:\\Users\\eden0\\Desktop\\עדן\\שנה ג\\סמסטר ב\\אבטחת מחשבים\\עבודות\\test files\\output";
         Main.checkEquals(path1,path2);
     }
