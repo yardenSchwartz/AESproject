@@ -1,11 +1,20 @@
 import java.io.File;
 import java.io.IOException;
+import java.lang.reflect.Array;
 import java.nio.file.Files;
+import java.util.Arrays;
 
 public class Main {
 
     public static void main(String[] args) throws IOException {
-        System.out.println("hello");
+        args=new String[7];
+        args[0]="-e";
+        args[1]="-k";
+        args[2]="C:\\Users\\eden0\\Desktop\\עדן\\שנה ג\\סמסטר ב\\אבטחת מחשבים\\עבודות\\test files\\key_long";
+        args[3]="-i";
+        args[4]="C:\\Users\\eden0\\Desktop\\עדן\\שנה ג\\סמסטר ב\\אבטחת מחשבים\\עבודות\\test files\\message_long";
+        args[5]="-o";
+        args[6]="C:\\Users\\eden0\\Desktop\\עדן\\שנה ג\\סמסטר ב\\אבטחת מחשבים\\עבודות\\test files\\output";
 
         String encOrDecOrCrack = args[0];//-e/-d/-b
         String keysOrPlaintext = args[1];//-k/-m
@@ -68,6 +77,17 @@ public class Main {
             }
         }
 
+        String path1="C:\\Users\\eden0\\Desktop\\עדן\\שנה ג\\סמסטר ב\\אבטחת מחשבים\\עבודות\\test files\\cipher_long";
+        String path2="C:\\Users\\eden0\\Desktop\\עדן\\שנה ג\\סמסטר ב\\אבטחת מחשבים\\עבודות\\test files\\output";
+        Main.checkEquals(path1,path2);
+    }
 
+    public  static void  checkEquals(String path1,String path2) throws IOException {
+        File file1 = new File(path1);
+        byte[] first = Files.readAllBytes(file1.toPath());
+        File file2 = new File(path2);
+        byte[] second = Files.readAllBytes(file2.toPath());
+        if(Arrays.equals(first,second))
+            System.out.println("kololo");
     }
 }

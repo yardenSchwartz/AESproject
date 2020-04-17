@@ -11,14 +11,14 @@ public class EncAES3 implements EncryptionOrDecryption {
         byte [] tmpRes=new byte[16];
         byte [][] keysArray=getKeys(keys);
         /**For each massage**/
-        while(numOfMassages-1!=currentMassage){
+        while(numOfMassages-1>=currentMassage){
             /**Fill tempRes with current massage*/
             for(int i=0;i<numOfCellsInBlock ;i++){
                 tmpRes[i]=input[i+numOfCellsInBlock*currentMassage];
             }
             /**Three rounds for each massage (16 bytes)**/
             for(int  i=0; i<rounds;i++){
-                encRound(tmpRes,keysArray[0],keysArray[1],keysArray[2]);
+                encRound(tmpRes,keysArray[i]);
             }
             /**Insert the encrypt massage to res**/
             for(int i=0; i<tmpRes.length; i++){
@@ -33,23 +33,13 @@ public class EncAES3 implements EncryptionOrDecryption {
     }
 
     private byte[][] getKeys(byte[] keys) {
-        int numPfKeys=3;
-        int numOfBytesEachKey=16;
-        int index=0;
-        byte[][]res=new byte[numPfKeys][16];
-        for(int i=0; i<numPfKeys;i++){
-            for(int j=0; j<numOfBytesEachKey; j++){
-                res[i][j]=keys[index++];
-            }
-        }
-        return res;
+       return GlobalFunction.getKeys(keys);
     }
 
-    private void encRound(byte[] input, byte[] key1, byte[] key2, byte[] key3) {
+    private void encRound(byte[] input, byte[] key1) {
         shiftColumns(input);
         roundKey(input,key1);
-        roundKey(input,key2);
-        roundKey(input,key3);
+
     }
 
     @Override
