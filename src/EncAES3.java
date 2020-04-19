@@ -1,6 +1,7 @@
 import java.io.*;
 
 public class EncAES3 implements EncryptionOrDecryption {
+
     @Override
     public void EncOrDec(byte[] input, File outputFile, byte[] keys) throws IOException {
         int rounds =3;
@@ -29,7 +30,6 @@ public class EncAES3 implements EncryptionOrDecryption {
         OutputStream os=new FileOutputStream(outputFile);
         os.write(res);
         os.close();
-
     }
 
     private byte[][] getKeys(byte[] keys) {

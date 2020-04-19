@@ -26,6 +26,29 @@ public class GlobalFunction {
         input[15]=temp3;
     }
 
+    public static void invertedShiftColumns(byte[] input) {
+        byte temp1=input[7];
+        input[7]=input[6];
+        input[6]=input[5];
+        input[5]=input[4];
+        input[4]=temp1;
+
+        temp1=input[11];
+        byte temp2=input[10];
+        input[11]=input[9];
+        input[10]=input[8];
+        input[9]=temp1;
+        input[8]=temp2;
+
+        temp1=input[15];
+        temp2=input[14];
+        byte temp3=input[13];
+        input[15]=input[12];
+        input[12]=temp3;
+        input[13]=temp2;
+        input[14]=temp1;
+    }
+
     /**
      * get an array in size 16 and make round key
      * @param array
